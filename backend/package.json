@@ -2,10 +2,12 @@
   "name": "resku",
   "version": "1.0.0",
   "description": "",
-  "main": "./backend/server.js",
+  "main": "./server.js",
   "type": "module",
   "scripts": {
-    "dev": "start nodemon ./backend/server.js && cd frontend && npm run dev"
+    "dev": "start nodemon ./server.js",
+    "start": "node ./server.js",
+    "build": "echo 'Add build script if needed for frontend bundling'"
   },
   "author": "",
   "license": "ISC",
