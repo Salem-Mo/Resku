@@ -1,0 +1,6 @@
+.profile-container {
+    display: grid;
+    gap: 50px;
+    justify-content: center;
+    grid-template-columns: auto auto;
+}
