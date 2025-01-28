@@ -6,7 +6,7 @@
   "type": "module",
 "scripts": {
   "dev": "start /B nodemon ./backend/server.js && cd frontend && npm run dev",
-  "start": "start /B node ./backend/server.js && cd frontend && npm start",
+  "start": "node ./backend/server.js & cd frontend && npm start",
   "build": "echo 'Add build script if needed for frontend bundling'"
 },
   "author": "",
