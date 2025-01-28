@@ -4,7 +4,7 @@ import { MSG } from "./models/msg.model.js";
 const setupSocket = (server) => {
     const io = new SocketIOServer(server, {
         cors: {
-            origin: process.env.CLIENT_ORIGIN || "http://localhost:5173", 
+            origin: process.env.FEHosturl || "http://localhost:5173", 
             methods: ["GET", "POST"],
             credentials: true,
         },

@@ -14,6 +14,7 @@ import toast from "react-hot-toast";
 
 import Cookies from 'js-cookie';
 import React, { useEffect, useState, useRef } from "react";
+import {ServerUrl} from '@/utils/constants';
 
 const DashboardPage = () => {
 	const { updateProfile, addProfileImg, delProfileImg, error, isLoading, message } = useAuthStore();
@@ -25,7 +26,7 @@ const DashboardPage = () => {
 
 	const [hovered, setHovered] = useState(null);
 	const fileInputRef = useRef(null);
-	const Host = 'http://localhost:5000/';
+	const Host = ServerUrl;
 	const colors = [
 		"bg-[#712c4a57] text-[#ff006e] border-[1px] border-[#ff006faa]",
 		"bg-[#ffd60a2a] text-[#ffd60a] border-[1px] border-[#ffd60abb]",

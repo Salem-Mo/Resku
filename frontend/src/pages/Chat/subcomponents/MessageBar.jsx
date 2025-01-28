@@ -274,6 +274,8 @@ import { useChatStore } from "@/store/chatStore";
 import { useAuthStore } from "@/store/authStore";
 import { io } from "socket.io-client";
 import axios from "axios";
+import {ServerUrl} from '@/utils/constants';
+
 
 const MessageBar = () => {
   const emojiRef = useRef();
@@ -301,7 +303,7 @@ const MessageBar = () => {
   }, []);
 
   useEffect(() => {
-    const newSocket = io("http://localhost:5000");
+    const newSocket = io({ServerUrl});
     setSocket(newSocket);
 
     newSocket.emit("joinRoom", { userId: user._id });
@@ -368,7 +370,7 @@ const MessageBar = () => {
         formData.append("msgType", file.type.startsWith("audio") ? "audio" : "file");
 
         const response = await axios.post(
-          "http://localhost:5000/api/chat/upload-file",
+          `${ServerUrl}/api/chat/upload-file`,
           formData,
           { withCredentials: true }
         );
@@ -432,7 +434,7 @@ const MessageBar = () => {
           socket.emit("sendMessage", { to: selectedChatData._id, newMessage });
 
           const response = await axios.post(
-            "http://localhost:5000/api/chat/save-msg",
+            `${ServerUrl}/api/chat/save-msg`,
             { newMessage },
             { withCredentials: true }
           );

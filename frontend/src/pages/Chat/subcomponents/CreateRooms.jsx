@@ -23,6 +23,8 @@ import { useChatStore } from '@/store/chatStore'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Button } from '@/components/ui/button' 
 import MultipleSelector from '@/components/ui/multipleselect'
+import {ServerUrl} from '@/utils/constants';
+
 
 const CreateRooms = () => {
     const {setSelectedChatData , setSelectedChatType,addRoom} =useChatStore()
@@ -39,7 +41,7 @@ const CreateRooms = () => {
     useEffect(() => {
         try {
             const getAllContactsAV =async () => {
-                const response = await axios.get('http://localhost:5000/api/chat/get-all-contacts', {userId: user._id }, { withCredentials: true })
+                const response = await axios.get(`${ServerUrl}/api/chat/get-all-contacts`, {userId: user._id }, { withCredentials: true })
                     setAllContacts(response.data.contacts)
             }
             getAllContactsAV()
@@ -57,7 +59,7 @@ const createRooms = async()=>{
                 members:selectedContacts.map((contact) => contact.value),
                 userID: user._id
             })
-            const response = await axios.post('http://localhost:5000/api/room/create-room', {
+            const response = await axios.post(`${ServerUrl}/api/room/create-room`, {
                 name: roomName,
                 members: selectedContacts.map((contact) => contact.value),
                 userID: user._id

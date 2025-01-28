@@ -5,6 +5,8 @@ import moment from 'moment';
 import axios from 'axios';
 import { FaFileImage, FaFileVideo, FaFileAudio, FaFileAlt, FaFileArchive, FaFilePdf, FaFileExcel, FaFileWord, FaFile } from 'react-icons/fa';
 import AudioPlayer from '@/components/Audio';
+import {ServerUrl} from '@/utils/constants';
+
 
 const MessageContainer = () => {
     const scrollRef = useRef();
@@ -17,7 +19,7 @@ const MessageContainer = () => {
             try {
                 if (selectedChatType == "dm") {
                     const response = await axios.post(
-                        "http://localhost:5000/api/chat/get-msg",
+                        `${ServerUrl}/api/chat/get-msg`,
                         {
                             sender: user._id,
                             recipient: selectedChatData._id,
@@ -32,7 +34,7 @@ const MessageContainer = () => {
                     }
                 } else if (selectedChatType == "room") {
                     const response = await axios.post(
-                        "http://localhost:5000/api/chat/get-msg",
+                        `${ServerUrl}/api/chat/get-msg`,
                         {
                             sender: user._id,
                             recipient: selectedChatData._id,
@@ -66,7 +68,7 @@ const MessageContainer = () => {
 
         if (!fileURL) return null;
         const extension = fileURL.split('.').pop().toLowerCase();
-        fileURL = 'http://localhost:5000/' + fileURL;
+        fileURL = `${ServerUrl}/` + fileURL;
         const openInNewTab = (fileToOpen) => {
             window.open(fileToOpen, '_blank');
         }

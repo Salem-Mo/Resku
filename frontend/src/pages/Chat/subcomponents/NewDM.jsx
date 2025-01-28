@@ -21,6 +21,8 @@ import UserAvatar from '@/components/UserAvatar'
 import { useAuthStore } from "@/store/authStore";
 import { useChatStore } from '@/store/chatStore'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import {ServerUrl} from '@/utils/constants';
+
 
 const NewDM = () => {
     const {setSelectedChatData , setSelectedChatType} =useChatStore()
@@ -41,7 +43,7 @@ const NewDM = () => {
     const searchContacts = async (searchTerm) => {
         try {
             if (searchTerm) {
-                const response = await axios.post('http://localhost:5000/api/chat/search-contacts', { searchTerm , userId: user._id }, { withCredentials: true })
+                const response = await axios.post(`${ServerUrl}/api/chat/search-contacts`, { searchTerm , userId: user._id }, { withCredentials: true })
                 setSearchedContacts(response.data.contacts)
             }
         } catch (error) {

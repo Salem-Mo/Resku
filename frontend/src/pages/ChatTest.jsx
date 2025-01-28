@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { io } from "socket.io-client";
-import { useAuthStore } from "@/store/authStore"; // Your auth store
+import { useAuthStore } from "@/store/authStore"; 
+import {ServerUrl} from '@/utils/constants';
+
 
 const ChatTest = () => {
   const { user } = useAuthStore();
@@ -10,7 +12,7 @@ const ChatTest = () => {
   const [receiverId, setReceiverId] = useState(""); // The user you want to chat with
 
   useEffect(() => {
-    const newSocket = io("http://localhost:5000");
+    const newSocket = io(ServerUrl);
     setSocket(newSocket);
 
     newSocket.emit("joinRoom", { userId: user._id });

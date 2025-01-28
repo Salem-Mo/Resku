@@ -50,12 +50,7 @@ i18n
 		}
 
 	});
-// 
 
-
-
-
-// protect routes that require authentication
 const ProtectedRoute = ({ children }) => {
 	const { isAuthenticated, user } = useAuthStore();
 

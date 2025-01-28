@@ -11,6 +11,7 @@ import {
 } from "../mailtrap/emails.js";
 import { User } from "../models/user.model.js";
 import { renameSync , unlinkSync } from "fs";
+const FEHosturl = process.env.FEHosturl;
 
 export const signup = async (req, res) => {
     const { email, password, name } = req.body;
@@ -161,7 +162,7 @@ export const forgotPassword = async (req, res) => {
         await sendResetPasswordEmail(
             user.email,
             user.name,
-            `http://localhost:5173/reset-password/${resetToken}`
+            `${FEHosturl}/reset-password/${resetToken}`
         );
 
         res.status(200).json({

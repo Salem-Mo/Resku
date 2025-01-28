@@ -8,19 +8,19 @@ import dotenv from "dotenv";
 import { Server } from "socket.io";
 import { createServer } from "http";
 
-
 import authRoutes from "./routes/auth.route.js";
 import pinRoutes from "./routes/pin.route.js";
 import chatRouter from "./routes/chat.route.js";
 import roomRouter from "./routes/room.route.js";
 
 dotenv.config();
-
 const app = express();
-const PORT = process.env.PORT || 5000;
 const __dirname = path.resolve();
 
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+const PORT = process.env.PORT || 5000;
+const FEHosturl = process.env.FEHosturl;
+
+app.use(cors({ origin: FEHosturl, credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
@@ -38,7 +38,9 @@ app.use("/api/auth", authRoutes);
 app.use("/api/pins", pinRoutes);
 app.use("/api/chat", chatRouter);
 app.use("/api/room", roomRouter);
-
+app.get("/", (req, res) => {
+    res.send("Hello World!");
+});
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "/frontend/dist")));
@@ -50,7 +52,7 @@ if (process.env.NODE_ENV === "production") {
 
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
-    cors: { origin: "http://localhost:5173", credentials: true },
+    cors: { origin: FEHosturl, credentials: true },
 });
 
 io.on("connection", (socket) => {
@@ -73,7 +75,9 @@ io.on("connection", (socket) => {
 });
 
 
-httpServer.listen(PORT, () => {
+httpServer.listen(PORT,  () => {
     connectDB();
-    console.log("Server is running on port:", PORT);
+    // console.log(`Server is running on: http://${BEHostip}:${PORT}`);
+    console.log(`Server is running on port: ${PORT}`);
+
 });

@@ -16,6 +16,8 @@ import { format } from 'timeago.js';
 import { useTranslation } from "react-i18next";
 import Cookies from 'js-cookie';
 import { useChatStore } from '@/store/chatStore';
+import {ServerUrl} from '@/utils/constants';
+
 
 
 
@@ -58,7 +60,7 @@ const MapBox = () => {
   useEffect(() => {
     const getPins = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/pins');
+        const res = await axios.get(`${ServerUrl}/api/pins`);
         console.log("frontend connected to backend");
         setPins(res.data);
       } catch (err) {
@@ -101,7 +103,7 @@ const MapBox = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {      
-      const createdRoom = await axios.post('http://localhost:5000/api/room/create-room', {
+      const createdRoom = await axios.post(`${ServerUrl}/api/room/create-room`, {
         name: title,
         members: [],
         userID: user._id
@@ -117,7 +119,7 @@ const MapBox = () => {
       lat: newPlace.lat,
       long: newPlace.long,
     };
-      const res = await axios.post('http://localhost:5000/api/pins', newPin)
+      const res = await axios.post(`${ServerUrl}/api/pins`, newPin)
 
       setPins([...pins, res.data])
       console.log(createdRoom);

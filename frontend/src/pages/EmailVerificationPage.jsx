@@ -33,8 +33,6 @@ const EmailVerificationPage = () => {
 		} else {
 			newCode[index] = value;
 			setCode(newCode);
-
-			// Move focus to the next input field if value is entered
 			if (value && index < 5) {
 				inputRefs.current[index + 1].focus();
 			}
@@ -59,7 +57,6 @@ const EmailVerificationPage = () => {
 		}
 	};
 
-	// Auto submit when all fields are filled
 	useEffect(() => {
 		if (code.every((digit) => digit !== "")) {
 			handleSubmit(new Event("submit"));

@@ -1,5 +1,3 @@
-import Cookies from 'js-cookie';
-
 import React, { useEffect, useState, useRef } from "react";
 import { useAuthStore } from "@/store/authStore";
 import { FiEdit2 } from "react-icons/fi";
@@ -17,6 +15,8 @@ import { useChatStore } from '@/store/chatStore'
 import ContactsList from '@/components/ContactsList';
 import CreateRooms from './subcomponents/CreateRooms';
 import { ScrollArea } from '@/components/ui/scroll-area'
+import {ServerUrl} from '@/utils/constants';
+
 
 
 const ContactsContainer = () => {
@@ -31,7 +31,7 @@ const ContactsContainer = () => {
         const getContacts = async () => {
             try {
                 const response = await axios.post(
-                    "http://localhost:5000/api/chat/get-dm-contacts",
+                    `${ServerUrl}/api/chat/get-dm-contacts`,
                     { userId: user._id },
                     { withCredentials: true }
                 );
@@ -49,7 +49,7 @@ const ContactsContainer = () => {
         const getRooms = async () => {
             try {
                 const response = await axios.get(
-                    "http://localhost:5000/api/room/get-user-rooms",
+                    `${ServerUrl}/api/room/get-user-rooms`,
                     { withCredentials: true }
                 );
                 if (response?.data?.success) {
@@ -77,7 +77,7 @@ const ContactsContainer = () => {
 
                 </div>
                 <ScrollArea className='max-h-[40vh] w-full'>
-                    <ContactsList contacts={dmContacts} type="dm"  />
+                    <ContactsList contacts={dmContacts} type="dm"/>
                 </ScrollArea>
             </div>
             <div className="my-5">
