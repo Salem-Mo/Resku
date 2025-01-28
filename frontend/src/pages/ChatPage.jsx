@@ -1,8 +1,8 @@
 import './styles/ChatPage.css'
 import { useChatStore } from '@/store/chatStore'
 import ChatContainer from './Chat/chatContainer'
-import ContactsContainer from './Chat/contactsContainer'
-import EmptyChatContainer from './Chat/emptyChatContainer'
+import ContactsContainer from './Chat/ContactsContainer'
+import EmptyChatContainer from './Chat/EmptyChatContainer'
 
 const ChatPage = () => {
   const {selectedChatType} = useChatStore()
