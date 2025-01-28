@@ -4,11 +4,11 @@
   "description": "",
   "main": "./backend/server.js",
   "type": "module",
-"scripts": {
-  "dev": "start /B nodemon ./backend/server.js && cd frontend && npm run dev",
-  "start": "node ./backend/server.js & cd frontend && npm start",
-  "build": "echo 'Add build script if needed for frontend bundling'"
-},
+  "scripts": {
+    "dev": "nodemon ./backend/server.js && cd frontend && npm run dev",
+    "start": "node ./backend/server.js",
+    "build": "echo 'Add build script if needed for frontend bundling'"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
