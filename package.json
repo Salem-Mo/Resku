@@ -6,9 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon ./backend/server.js && cd frontend && npm run dev",
-    "start": "node ./backend/server.js && cd frontend && vite preview",
-    "build": "cd frontend && npm run build && cd .. && node ./backend/server.js",
-    "serve": "node ./backend/server.js"
+    "start": "node ./backend/server.js",
+    "build": "node ./backend/server.js"
   },
   "author": "",
   "license": "ISC",
