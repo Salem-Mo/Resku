@@ -19,7 +19,7 @@ const __dirname = path.resolve();
 
 const PORT = process.env.PORT || 5000;
 const FEHosturl = process.env.FEHosturl;
-const FEHosturllocal = process.env.FEHosturllocal;
+const FEHosturllocal = 'http://localhost:5173';
 
 app.use(cors({
     origin: [FEHosturl, FEHosturllocal],
