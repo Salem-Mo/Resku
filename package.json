@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nodemon ./backend/server.js && cd frontend && npm run dev",
     "start": "node ./backend/server.js",
-    "build": "echo 'Add build script if needed for frontend bundling'"
+    "build": "cd frontend && npm run build && cd .. && node ./backend/server.js"
   },
   "author": "",
   "license": "ISC",
