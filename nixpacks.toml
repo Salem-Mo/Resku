@@ -1,5 +1,0 @@
-[build]
-base_image = "node:18"
-install_command = "npm install"
-build_command = "npm run build"
-start_command = "npm start"
