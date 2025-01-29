@@ -19,10 +19,10 @@ const __dirname = path.resolve();
 
 const PORT = process.env.PORT || 5000;
 const FEHosturl = process.env.FEHosturl;
-const FEHosturllocal = 'http://localhost:5173';
+const FEHosturlnet = ['http://localhost:5173', 'http://localhost:3000', 'http://192.168.1.2:5173', 'http://192.168.1.2:3000'];
 
 app.use(cors({
-    origin: "*",
+    origin: [FEHosturl, FEHosturlnet],
     credentials: true,
 }));
 app.use(express.json());
