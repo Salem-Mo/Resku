@@ -25,7 +25,6 @@ app.use(cors({
     origin: [FEHosturl, FEHosturllocal],
     credentials: true,
 }));
-app.use(cors({credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
