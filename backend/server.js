@@ -22,6 +22,7 @@ const FEHosturl = process.env.FEHosturl;
 const FEHosturllocal = 'http://localhost:5173';
 
 app.use(cors({
+    origin: "*",
     credentials: true,
 }));
 app.use(express.json());
