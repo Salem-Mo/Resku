@@ -6,9 +6,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "start": "vite preview"
+    "start": "npx serve -s dist"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -53,6 +51,7 @@
     "react-select": "^5.8.2",
     "react-world-flags": "^1.6.0",
     "send": "^1.1.0",
+    "serve": "^14.2.4",
     "socket.io-client": "^4.8.1",
     "styled-components": "^6.1.13",
     "tailwind-merge": "^2.5.4",
