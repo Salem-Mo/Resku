@@ -11,7 +11,6 @@ import { defineConfig } from "vite"
 
 export default defineConfig({
   plugins: [react()],
-  root: 'frontend',
   resolve: {
     alias: {
       "@": path.resolve("./src"),
