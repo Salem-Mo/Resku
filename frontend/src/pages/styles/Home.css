@@ -1,0 +1,16 @@
+/* Add this to your Home.css file */
+
+/* Container that holds all sections */
+.home-container {
+    height: 100vh;
+    overflow-y: scroll; /* Enable vertical scrolling */
+    scroll-snap-type: y mandatory; /* Enable scroll snapping */
+    scroll-behavior: smooth; /* Smooth scroll behavior */
+  }
+  
+  /* Individual sections */
+  section {
+    height: 100vh;
+    scroll-snap-align: start; /* Snap to the top of each section */
+  }
+  

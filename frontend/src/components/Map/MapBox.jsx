@@ -5,7 +5,6 @@ import './Map.css';
 import { useAuthStore } from "../../store/authStore";
 
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import VerifiedIcon from '@mui/icons-material/Verified';
 import ReportOutlinedIcon from '@mui/icons-material/ReportOutlined';
 import ReportProblemOutlinedIcon from '@mui/icons-material/ReportProblemOutlined';
 import CrisisAlertOutlinedIcon from '@mui/icons-material/CrisisAlertOutlined';
@@ -15,9 +14,10 @@ import axios from 'axios';
 import { format } from 'timeago.js';
 import { useTranslation } from "react-i18next";
 import Cookies from 'js-cookie';
-import { useChatStore } from '@/store/chatStore';
 import {ServerUrl} from '@/utils/constants';
+import toast from "react-hot-toast";
 
+const SalhlyLogo = '/images/salhly.png';
 
 
 
@@ -255,6 +255,13 @@ const MapBox = () => {
     openGoogleMaps();
   }
   const [hoveredServices, setHoveredServices] = useState(null);
+
+  const handleSalhlyReq = (e) => {
+    e.preventDefault();
+    toast.info("This feature is under development.");
+  }
+
+
   return (
     <>
       <div>
@@ -564,12 +571,15 @@ const MapBox = () => {
       <div className="action-bar flex justify-around gap-4 items-center px-4 py-1 bg-black rounded-[15px] ring-1 ring-white absolute z-10 bottom-2 left-1/2 transform -translate-x-1/2">
         {/* Report */}
         <div className="relative group hover:cursor-pointer hover:bg-slate-800 p-2 rounded-full transition-all duration-500"
-          onClick={() => handleLocationClick("report")}
+          onClick={() => handleSalhlyReq()}
 
         >
-          <ReportOutlinedIcon sx={{ fontSize: 30, color: 'white' }} />
+          {/* <ReportOutlinedIcon sx={{ fontSize: 30, color: 'white' }} /> */}
+          <img src={SalhlyLogo} alt="Salahly" className='w-8 h-8'
+          
+          />
           <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-4 w-max px-2 py-1 text-white bg-black rounded-md opacity-0 scale-50 transition-all duration-500 group-hover:opacity-100 group-hover:scale-100">
-            {t('Report')}
+            {t('Slahly')}
           </div>
         </div>
         {/* Request in live location */}
@@ -601,7 +611,7 @@ const MapBox = () => {
       </div>
       {/* Services Options */}
       {ServicesClicked &&
-        <div className='Services_Options'>
+        <div className='Services_Options' >
           <div className="radio-wrapper">
             <div className="radio-container">
               <input onClick={() => 

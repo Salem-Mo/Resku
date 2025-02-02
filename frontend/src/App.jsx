@@ -25,6 +25,7 @@ import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpApi from 'i18next-http-backend';
 import cookies from 'js-cookie'
+import Map from "./pages/Map";
 
 i18n
 	.use(initReactI18next)
@@ -113,11 +114,19 @@ function App() {
 					}
 				/>
 				<Route
+					path='/map'
+					element={
+						<ProtectedRoute>
+							<Map />
+						</ProtectedRoute>
+					}
+				/>
+				<Route
 					path='/chat'
 					element={
 						<ProtectedRoute>
 							{/* <SocketProvider> */}
-								{/* <ChatTest /> */}
+							{/* <ChatTest /> */}
 
 							<ChatPage />
 							{/* </SocketProvider> */}

@@ -26,7 +26,7 @@ const DashboardPage = () => {
 
 	const [hovered, setHovered] = useState(null);
 	const fileInputRef = useRef(null);
-	const Host = ServerUrl;
+	const Host = `${ServerUrl}`;
 	const colors = [
 		"bg-[#712c4a57] text-[#ff006e] border-[1px] border-[#ff006faa]",
 		"bg-[#ffd60a2a] text-[#ffd60a] border-[1px] border-[#ffd60abb]",
