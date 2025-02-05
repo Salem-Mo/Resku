@@ -14,7 +14,7 @@ import axios from 'axios';
 import { format } from 'timeago.js';
 import { useTranslation } from "react-i18next";
 import Cookies from 'js-cookie';
-import {ServerUrl} from '@/utils/constants';
+import {ServerUrl} from '../../utils/constants';
 import toast from "react-hot-toast";
 
 const SalhlyLogo = '/images/salhly.png';

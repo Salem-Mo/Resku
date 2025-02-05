@@ -1,5 +1,5 @@
 import './styles/ChatPage.css'
-import { useChatStore } from '@/store/chatStore'
+import { useChatStore } from '../store/chatStore'
 import ChatContainer from './Chat/ChatContainer'
 import ContactsContainer from './Chat/ContactsContainer'
 import EmptyChatContainer from './Chat/EmptyChatContainer'

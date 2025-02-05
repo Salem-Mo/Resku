@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie';
 import React, { useEffect, useState, useRef } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {ServerUrl} from '@/utils/constants';
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import {ServerUrl} from '../utils/constants';
 
 
 const UserAvatar = (currentUser, type) => {

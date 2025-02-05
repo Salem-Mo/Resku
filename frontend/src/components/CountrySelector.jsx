@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
-import countries from 'world-countries';
+// import countries from 'world-countries';
 import Flag from 'react-world-flags';
 import { useTranslation } from 'react-i18next';
 import Cookies from 'js-cookie';
+const countries = {
+  "AF": "Afghanistan",
+  "AX": "Aland Islands",}
 
 const CountrySelector = () => {
   const { t } = useTranslation();

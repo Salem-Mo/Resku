@@ -1,5 +1,5 @@
-import UserAvatar, { RoomAvatar } from '@/components/UserAvatar'
-import { useChatStore } from '@/store/chatStore'
+import UserAvatar, { RoomAvatar } from './UserAvatar'
+import { useChatStore } from '../store/chatStore'
 const ContactsList = ({ contacts, type }) => {
     const { setSelectedChatData, setSelectedChatType } = useChatStore()
     return (

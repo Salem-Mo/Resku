@@ -1,5 +1,5 @@
 import Lottie from 'react-lottie'
-import animationData from '@/assets/ChatAnimation.json'
+import animationData from '../assets/ChatAnimation.json'
 const ChatLoading = () => {
     return (
         <>

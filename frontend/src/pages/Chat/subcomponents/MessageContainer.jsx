@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useAuthStore } from '@/store/authStore';
-import { useChatStore } from '@/store/chatStore';
+import { useAuthStore } from '../../../store/authStore';
+import { useChatStore } from '../../../store/chatStore';
 import moment from 'moment';
 import axios from 'axios';
 import { FaFileImage, FaFileVideo, FaFileAudio, FaFileAlt, FaFileArchive, FaFilePdf, FaFileExcel, FaFileWord, FaFile } from 'react-icons/fa';
-import AudioPlayer from '@/components/Audio';
-import {ServerUrl} from '@/utils/constants';
+import AudioPlayer from '../../../components/Audio';
+import {ServerUrl} from '../../../utils/constants';
 
 
 const MessageContainer = () => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import ChatLoading from '@/components/ChatLoading'
+import ChatLoading from '../../components/ChatLoading'
 const EmptyChatContainer = () => {
     return (
         <div className='flex-1 md:bg-[#1c1b25] md:flex flex-col justify-center items-center hidden duration-1000 transition-all'>

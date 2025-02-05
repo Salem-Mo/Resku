@@ -5,7 +5,7 @@ import { useAuthStore } from "../../store/authStore";
 import cookies from 'js-cookie';
 import i18n from "i18next";
 import PublicOutlinedIcon from '@mui/icons-material/PublicOutlined';
-import UserAvatar from '@/components/UserAvatar';
+import UserAvatar from '../UserAvatar';
 
 
 const Navbar = () => {

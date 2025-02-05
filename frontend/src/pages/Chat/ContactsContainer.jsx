@@ -1,21 +1,21 @@
 import React, { useEffect, useState, useRef } from "react";
-import { useAuthStore } from "@/store/authStore";
+import { useAuthStore } from "../../store/authStore";
 import { FiEdit2 } from "react-icons/fi";
-import UserAvatar from '@/components/UserAvatar';
+import UserAvatar from '../../components/UserAvatar';
 import {
     Tooltip,
     TooltipContent,
     TooltipProvider,
     TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from "../../components/ui/tooltip"
 import { useNavigate } from 'react-router-dom';
 import NewDM from './subcomponents/NewDM';
 import axios from 'axios';
-import { useChatStore } from '@/store/chatStore'
-import ContactsList from '@/components/ContactsList';
+import { useChatStore } from '../../store/chatStore'
+import ContactsList from '../../components/ContactsList';
 import CreateRooms from './subcomponents/CreateRooms';
-import { ScrollArea } from '@/components/ui/scroll-area'
-import {ServerUrl} from '@/utils/constants';
+import { ScrollArea } from '../../components/ui/scroll-area'
+import {ServerUrl} from '../../utils/constants';
 
 
 

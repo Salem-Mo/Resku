@@ -6,7 +6,7 @@ import './styles/Profile.css';
 import { useNavigate } from "react-router-dom";
 
 import { ArrowBackIos, Add, DeleteOutline } from "@mui/icons-material";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
 import Select from 'react-select';
 import countries from 'world-countries';
 import Flag from 'react-world-flags';
@@ -14,7 +14,7 @@ import toast from "react-hot-toast";
 
 import Cookies from 'js-cookie';
 import React, { useEffect, useState, useRef } from "react";
-import {ServerUrl} from '@/utils/constants';
+import {ServerUrl} from '../utils/constants';
 
 const DashboardPage = () => {
 	const { updateProfile, addProfileImg, delProfileImg, error, isLoading, message } = useAuthStore();

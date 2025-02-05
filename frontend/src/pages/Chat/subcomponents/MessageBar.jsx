@@ -270,11 +270,11 @@ import { RiEmojiStickerLine } from "react-icons/ri";
 import { IoSend } from "react-icons/io5";
 import { CiMicrophoneOn } from "react-icons/ci";
 import EmojiPicker from "emoji-picker-react";
-import { useChatStore } from "@/store/chatStore";
-import { useAuthStore } from "@/store/authStore";
+import { useChatStore } from "../../../store/chatStore";
+import { useAuthStore } from "../../../store/authStore";
 import { io } from "socket.io-client";
 import axios from "axios";
-import {ServerUrl} from '@/utils/constants';
+import {ServerUrl} from '../../../utils/constants';
 
 
 const MessageBar = () => {
