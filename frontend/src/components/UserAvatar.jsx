@@ -1,5 +1,5 @@
 import Cookies from 'js-cookie';
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import {ServerUrl} from '../utils/constants';
 
@@ -12,10 +12,13 @@ const UserAvatar = (currentUser, type) => {
         "bg-[#06d6a02a] text-[#06d6a0] border-[1px] border-[#06d6a0bb]",
         "bg-[#4cc9f02a] text-[#4cc9f0] border-[1px] border-[#4cc9f0bb]"
     ];
-    const [user, setUser] = useState(currentUser.currentUser);
+    // const [user, setUser] = useState(currentUser.currentUser);
 
-    const [userImg, setUserImg] = useState(user.userImage || null);
-    const [selectedColor, setSelectedColor] = useState(user.color);
+    // const [userImg, setUserImg] = useState(user.userImage || null);
+    // const [selectedColor, setSelectedColor] = useState(user.color);
+    const user = currentUser.currentUser;
+    const userImg = user.userImage || null;
+    const selectedColor = user.color;
     const getColor = (index) => {
         return index !== undefined ? colors[index] : Cookies.get('selectedColor') || colors[0];
     };

@@ -5,29 +5,37 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from "../../../components/ui/tooltip"
+// import {
+//     Dialog,
+//     DialogContent,
+//     DialogDescription,
+//     DialogHeader,
+//     DialogTitle,
+//     DialogTrigger,
+// } from "../../../components/ui/dialog"
+// import { ScrollArea } from '../../../components/ui/scroll-area'
+// import ChatLoading from '../../../components/ChatLoading'
+// import UserAvatar from '../../../components/UserAvatar'
 import {
     Dialog,
     DialogContent,
     DialogDescription,
     DialogHeader,
     DialogTitle,
-    DialogTrigger,
 } from "../../../components/ui/dialog"
 
 import { FaPlus } from "react-icons/fa"
-import ChatLoading from '../../../components/ChatLoading'
 import axios from 'axios'
-import UserAvatar from '../../../components/UserAvatar'
 import { useAuthStore } from "../../../store/authStore";
 import { useChatStore } from '../../../store/chatStore'
-import { ScrollArea } from '../../../components/ui/scroll-area'
 import { Button } from '../../../components/ui/button' 
 import MultipleSelector from '../../../components/ui/multipleselect'
 import {ServerUrl} from '../../../utils/constants';
 
 
 const CreateRooms = () => {
-    const {setSelectedChatData , setSelectedChatType,addRoom} =useChatStore()
+    // const {setSelectedChatData , setSelectedChatType,addRoom} =useChatStore()
+    const {setSelectedChatType,addRoom} =useChatStore()
     const { user } = useAuthStore();
     const [openNewRoomsModal, setNewRoomsModal] = useState(false);
     const [allContacts ,setAllContacts] = useState([]);

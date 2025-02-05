@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Map, { NavigationControl, Marker, Popup, Source, Layer } from 'react-map-gl';
+// import Map, { NavigationControl, Marker, Popup, Source, Layer } from 'react-map-gl';
+import Map, { NavigationControl, Marker, Popup } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import './Map.css';
 import { useAuthStore } from "../../store/authStore";
@@ -206,7 +207,7 @@ const MapBox = () => {
       ]);
       console.log(bounds);
     }
-  }, [viewState]);
+  }, [viewState, bounds]);
   const [minLon, minLat, maxLon, maxLat] = bounds;
   const [servicesType, setServicesType] = useState("hospital");
   const fetchServices = async () => {
@@ -311,7 +312,7 @@ const MapBox = () => {
 
           ))}
 
-          {hoveredServices && (hoveredServices != selectedServices) && (
+          {hoveredServices && (hoveredServices !== selectedServices) && (
             <Popup
               latitude={hoveredServices.lat}
               longitude={hoveredServices.lon}
@@ -338,13 +339,13 @@ const MapBox = () => {
               </div>
               <div className="card" style={{ textAlign: 'center' }}>
                 {selectedServices.tags.amenity && (
-                  <label>{(selectedServices.tags.amenity == 'fire_station') ? 'Fire Station' : selectedServices.tags.amenity.charAt(0).toUpperCase() + selectedServices.tags.amenity.slice(1)}</label>
+                  <label>{(selectedServices.tags.amenity === 'fire_station') ? 'Fire Station' : selectedServices.tags.amenity.charAt(0).toUpperCase() + selectedServices.tags.amenity.slice(1)}</label>
                 )}
                 {selectedServices.tags.name && (
                   <>
                     <label>{t("Name")}</label>
                     <h4 className="place">{selectedServices.tags.name}</h4>
-                    {selectedServices.tags["name:en"] && selectedServices.tags["name:en"] != selectedServices.tags.name && (
+                    {selectedServices.tags["name:en"] && selectedServices.tags["name:en"] !== selectedServices.tags.name && (
                       <h4 className="place">{selectedServices.tags["name:en"]}</h4>
                     )}
                     {selectedServices.tags.phone && (

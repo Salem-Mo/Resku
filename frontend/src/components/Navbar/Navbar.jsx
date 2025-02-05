@@ -10,7 +10,7 @@ import UserAvatar from '../UserAvatar';
 
 const Navbar = () => {
     const { user, logout } = useAuthStore();
-    const lng = cookies.get('i18next') || 'en';
+    // const lng = cookies.get('i18next') || 'en';
     const navigate = useNavigate();
     const [showDropdown, setShowDropdown] = useState(false);
     const [showLangDropdown, setShowLangDropdown] = useState(false);

@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useAuthStore } from '../../../store/authStore';
 import { useChatStore } from '../../../store/chatStore';
 import moment from 'moment';
 import axios from 'axios';
-import { FaFileImage, FaFileVideo, FaFileAudio, FaFileAlt, FaFileArchive, FaFilePdf, FaFileExcel, FaFileWord, FaFile } from 'react-icons/fa';
+// import { FaFileImage, FaFileVideo, FaFileAudio, FaFileAlt, FaFileArchive, FaFilePdf, FaFileExcel, FaFileWord, FaFile } from 'react-icons/fa';
+import { FaFileAlt, FaFilePdf, FaFileWord, FaFile } from 'react-icons/fa';
 import AudioPlayer from '../../../components/Audio';
 import {ServerUrl} from '../../../utils/constants';
 
@@ -17,7 +18,7 @@ const MessageContainer = () => {
     useEffect(() => {
         const fetchMessages = async () => {
             try {
-                if (selectedChatType == "dm") {
+                if (selectedChatType === "dm") {
                     const response = await axios.post(
                         `${ServerUrl}/api/chat/get-msg`,
                         {
@@ -32,7 +33,7 @@ const MessageContainer = () => {
                         
                         setSelectedChatMessages(response.data.messages);
                     }
-                } else if (selectedChatType == "room") {
+                } else if (selectedChatType === "room") {
                     const response = await axios.post(
                         `${ServerUrl}/api/chat/get-msg`,
                         {
@@ -55,7 +56,7 @@ const MessageContainer = () => {
         };
 
         fetchMessages();
-    }, [selectedChatMessages]);
+    }, [selectedChatType, selectedChatData, user._id, setSelectedChatMessages]);
 
     useEffect(() => {
         if (scrollRef.current) {

@@ -23,7 +23,8 @@ const ContactsContainer = () => {
     const navigate = useNavigate()
     const { user } = useAuthStore()
 
-    const { dmContacts, setDMContacts, rooms, setRooms,selectedChatType, setSelectedChatType} = useChatStore()
+    const { dmContacts, setDMContacts, rooms, setRooms} = useChatStore()
+    // const { dmContacts, setDMContacts, rooms, setRooms,selectedChatType, setSelectedChatType} = useChatStore()
 
 
     useEffect(() => {

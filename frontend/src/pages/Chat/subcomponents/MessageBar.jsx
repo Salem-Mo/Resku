@@ -285,7 +285,8 @@ const MessageBar = () => {
   const [recording, setRecording] = useState(false);
   const [message, setMessage] = useState("");
   const [emojiPickerOpen, setEmojiPickerOpen] = useState(false);
-  const { selectedChatData, selectedChatType } = useChatStore();
+  const { selectedChatData } = useChatStore();
+  // const { selectedChatData, selectedChatType } = useChatStore();
   const { user } = useAuthStore();
   const { addMessage } = useChatStore();
   const [socket, setSocket] = useState(null);
