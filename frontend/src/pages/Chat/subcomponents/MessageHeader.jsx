@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Cookies from 'js-cookie';
 import { RiCloseFill } from 'react-icons/ri';
 import { useChatStore } from '../../../store/chatStore';

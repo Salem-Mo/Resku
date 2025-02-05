@@ -19,13 +19,9 @@ import {ServerUrl} from '../../utils/constants';
 import toast from "react-hot-toast";
 
 const SalhlyLogo = '/images/salhly.png';
-
-
-
 const MAPBOX_TOKEN = 'pk.eyJ1Ijoic2FsZW1tb2hhbWVkIiwiYSI6ImNtMHdoaHlwYTAxdnkybHM1Y2djdHVidnAifQ.BFxnRx6AF4vGKAOyUcjbFQ'; // Replace with your token
 
 const MapBox = () => {
-
   const { user } = useAuthStore();
   const { t } = useTranslation();
   const currentUser = user.email;

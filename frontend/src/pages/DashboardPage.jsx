@@ -53,7 +53,7 @@ const DashboardPage = () => {
 		if (savedCountry) {
 			setSelectedCountry(options.find(option => option.value === savedCountry) || null);
 		}
-	}, []);
+	}, [options, user.country]);
 
 	const options = countries.map((country) => ({
 		value: country.cca2,
@@ -134,9 +134,9 @@ const DashboardPage = () => {
 	}
 
 
-	const handleFileInputClick = () => {
-		fileInputRef.current.click();
-	}
+	// const handleFileInputClick = () => {
+	// 	fileInputRef.current.click();
+	// }
 	const handleImgChange = async (event) => {
 		const imgFile = event.target.files[0];
 		const userID = user._id
