@@ -46,7 +46,12 @@ const DashboardPage = () => {
 		Cookies.remove('selectedCountry');
 	};
 	const [selectedCountry, setSelectedCountry] = useState(user.country);
-
+	
+	const options = countries.map((country) => ({
+		value: country.cca2,
+		label: t(`${country.name.common}`),
+		flag: country.cca2.toLowerCase(),
+	}));
 	useEffect(() => {
 		
 		const savedCountry = Cookies.get('selectedCountry') || user.country;
@@ -55,11 +60,6 @@ const DashboardPage = () => {
 		}
 	}, [options, user.country]);
 
-	const options = countries.map((country) => ({
-		value: country.cca2,
-		label: t(`${country.name.common}`),
-		flag: country.cca2.toLowerCase(),
-	}));
 
 	const customOption = (props) => (
 		<div
