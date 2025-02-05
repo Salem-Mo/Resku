@@ -1,10 +1,12 @@
 import Cookies from 'js-cookie';
-import React, { useState } from "react";
+// import React, { useState } from "react";
+import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import {ServerUrl} from '../utils/constants';
 
 
-const UserAvatar = (currentUser, type) => {
+// const UserAvatar = (currentUser, type) => {
+    const UserAvatar = (currentUser) => {
     const Host = `${ServerUrl}/`;
     const colors = [
         "bg-[#712c4a57] text-[#ff006e] border-[1px] border-[#ff006faa]",

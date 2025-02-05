@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { useAuthStore } from "../store/authStore";
-import { formatDate } from "../utils/date";
+// import { formatDate } from "../utils/date";
 import { useTranslation } from "react-i18next";
 import './styles/Profile.css';
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
-import { ArrowBackIos, Add, DeleteOutline } from "@mui/icons-material";
+import { Add, DeleteOutline } from "@mui/icons-material";
 import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
 import Select from 'react-select';
 import countries from 'world-countries';
@@ -17,11 +17,12 @@ import React, { useEffect, useState, useRef } from "react";
 import {ServerUrl} from '../utils/constants';
 
 const DashboardPage = () => {
-	const { updateProfile, addProfileImg, delProfileImg, error, isLoading, message } = useAuthStore();
-	const token = Cookies.get("token");
+	const { updateProfile, addProfileImg, delProfileImg} = useAuthStore();
+	// const { updateProfile, addProfileImg, delProfileImg, error, isLoading, message } = useAuthStore();
+	// const token = Cookies.get("token");
 	const { t } = useTranslation();
 	const { user, logout } = useAuthStore();
-	const navigate = useNavigate();
+	// const navigate = useNavigate();
 	const [userImg, setUserImg] = useState(user.userImage  || null);
 
 	const [hovered, setHovered] = useState(null);

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect } from "react";
 import { useAuthStore } from "../../store/authStore";
 import { FiEdit2 } from "react-icons/fi";
 import UserAvatar from '../../components/UserAvatar';
