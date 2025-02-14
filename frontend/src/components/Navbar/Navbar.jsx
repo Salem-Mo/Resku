@@ -5,12 +5,12 @@ import { useAuthStore } from "../../store/authStore";
 import cookies from 'js-cookie';
 import i18n from "i18next";
 import PublicOutlinedIcon from '@mui/icons-material/PublicOutlined';
-import UserAvatar from '../UserAvatar';
+import UserAvatar from '@/components/UserAvatar';
 
 
 const Navbar = () => {
     const { user, logout } = useAuthStore();
-    // const lng = cookies.get('i18next') || 'en';
+    const lng = cookies.get('i18next') || 'en';
     const navigate = useNavigate();
     const [showDropdown, setShowDropdown] = useState(false);
     const [showLangDropdown, setShowLangDropdown] = useState(false);

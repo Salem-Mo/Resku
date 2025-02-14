@@ -1,21 +1,21 @@
-import React, { useEffect } from "react";
-import { useAuthStore } from "../../store/authStore";
+import React, { useEffect, useState, useRef } from "react";
+import { useAuthStore } from "@/store/authStore";
 import { FiEdit2 } from "react-icons/fi";
-import UserAvatar from '../../components/UserAvatar';
+import UserAvatar from '@/components/UserAvatar';
 import {
     Tooltip,
     TooltipContent,
     TooltipProvider,
     TooltipTrigger,
-} from "../../components/ui/tooltip"
+} from "@/components/ui/tooltip"
 import { useNavigate } from 'react-router-dom';
 import NewDM from './subcomponents/NewDM';
 import axios from 'axios';
-import { useChatStore } from '../../store/chatStore'
-import ContactsList from '../../components/ContactsList';
+import { useChatStore } from '@/store/chatStore'
+import ContactsList from '@/components/ContactsList';
 import CreateRooms from './subcomponents/CreateRooms';
-import { ScrollArea } from '../../components/ui/scroll-area'
-import {ServerUrl} from '../../utils/constants';
+import { ScrollArea } from '@/components/ui/scroll-area'
+import {ServerUrl} from '@/utils/constants';
 
 
 
@@ -23,8 +23,7 @@ const ContactsContainer = () => {
     const navigate = useNavigate()
     const { user } = useAuthStore()
 
-    const { dmContacts, setDMContacts, rooms, setRooms} = useChatStore()
-    // const { dmContacts, setDMContacts, rooms, setRooms,selectedChatType, setSelectedChatType} = useChatStore()
+    const { dmContacts, setDMContacts, rooms, setRooms,selectedChatType, setSelectedChatType} = useChatStore()
 
 
     useEffect(() => {
@@ -63,7 +62,7 @@ const ContactsContainer = () => {
         getRooms()
         getContacts()
 
-    }, [setDMContacts, setRooms, user._id])
+    }, [])
 
     return (
         <div className='relative md:w-[35vw] lg:w-[30vw] xl:w-[20vw] bg-[#1b1c24] border-r-2 border-[#2f303b] w-full left-0 '>

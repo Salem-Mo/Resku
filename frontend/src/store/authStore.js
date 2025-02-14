@@ -1,9 +1,9 @@
 import { create } from "zustand";
 import axios from "axios";
 import Cookies from "js-cookie";
-import {ServerUrl} from '../utils/constants.js';
+import {ServerUrl} from '@/utils/constants';
 
-const API_URL = `${ServerUrl}/api/auth`;
+const API_URL = import.meta.env.MODE === "development" ? `${ServerUrl}/api/auth` : "/api/auth";
 
 axios.defaults.withCredentials = true;
 
@@ -17,7 +17,6 @@ export const useAuthStore = create((set) => ({
 	isCheckingAuth: true,
 	message: null,
 	
-
 	// Auth {
 	signup: async (email, password, name) => {
 		set({ isLoading: true, error: null });
@@ -69,6 +68,7 @@ export const useAuthStore = create((set) => ({
 			throw error;
 		}
 	},
+
 	checkAuth: async () => {
 		set({ isCheckingAuth: true, error: null });
 		try {
@@ -106,10 +106,10 @@ export const useAuthStore = create((set) => ({
 	},
 
 
-	updateProfile: async (userID,name, country, color,userImage) => {
+	updateProfile: async (userID,name, country, color,userImage,supplies) => {
 		set({ isLoading: true, error: null });
 		try {
-			const response = await axios.post(`${API_URL}/update-profile/`, {userID, name, country, color ,userImage});
+			const response = await axios.post(`${API_URL}/update-profile/`, {userID, name, country, color ,userImage,supplies});
 			set({ message: response.data.message, isLoading: false });
 		} catch (error) {
 			set({

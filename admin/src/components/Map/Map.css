@@ -1,0 +1,8 @@
+.green-marker {
+    width: 16px;
+    height: 16px;
+    background-color: green;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}

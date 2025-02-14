@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
 import { RiCloseFill } from 'react-icons/ri';
-import { useChatStore } from '../../../store/chatStore';
-import { Avatar, AvatarFallback, AvatarImage } from "../../../components/ui/avatar";
-import { RoomAvatar } from '../../../components/UserAvatar';
-import {ServerUrl} from '../../../utils/constants';
+import { useChatStore } from '@/store/chatStore';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { RoomAvatar } from '@/components/UserAvatar';
+import {ServerUrl} from '@/utils/constants';
 
 
 const MessageHeader = () => {

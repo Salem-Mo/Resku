@@ -4,23 +4,24 @@ import {
     TooltipContent,
     TooltipProvider,
     TooltipTrigger,
-} from "../../../components/ui/tooltip"
+} from "@/components/ui/tooltip"
 import {
     Dialog,
     DialogContent,
     DialogDescription,
     DialogHeader,
     DialogTitle,
-} from "../../../components/ui/dialog"
+    DialogTrigger,
+} from "@/components/ui/dialog"
 
 import { FaPlus } from "react-icons/fa"
-import ChatLoading from '../../../components/ChatLoading'
+import ChatLoading from '@/components/ChatLoading'
 import axios from 'axios'
-import UserAvatar from '../../../components/UserAvatar'
-import { useAuthStore } from "../../../store/authStore";
-import { useChatStore } from '../../../store/chatStore'
-import { ScrollArea } from '../../../components/ui/scroll-area'
-import {ServerUrl} from '../../../utils/constants';
+import UserAvatar from '@/components/UserAvatar'
+import { useAuthStore } from "@/store/authStore";
+import { useChatStore } from '@/store/chatStore'
+import { ScrollArea } from '@/components/ui/scroll-area'
+import {ServerUrl} from '@/utils/constants';
 
 
 const NewDM = () => {

@@ -83,7 +83,6 @@ export const verifyEmail = async (req, res) => {
         await user.save();
 
         await sendWelcomeEmail(user.email, user.name);
-
         res.status(200).json({
             success: true,
             message: "Email verified successfully",
@@ -213,11 +212,11 @@ export const resetPassword = async (req, res) => {
 };
 export const updateProfile = async (req, res) => {
     try {
-        const { userID, name, country, color, userImage } = req.body;
+        const { userID, name, country, color, userImage ,supplies} = req.body;
 
         const user = await User.findByIdAndUpdate(
             userID,
-            { name, country, color, userImage },
+            { name, country, color, userImage ,supplies},
             { new: true }
         );
 

@@ -6,11 +6,11 @@ import Home from "./pages/Home";
 import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
 import EmailVerificationPage from "./pages/EmailVerificationPage";
-import DashboardPage from "./pages/DashboardPage";
+import Profile from "./pages/Profile";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
 import ChatPage from "./pages/ChatPage";
-
+import CompleteProfile from "./pages/CompleteProfile";
 // Components
 import LoadingSpinner from "./components/LoadingSpinner";
 
@@ -20,9 +20,8 @@ import React, { useEffect } from "react";
 
 // Translation
 import i18n from "i18next";
-// import { useTranslation, initReactI18next } from "react-i18next";
-import { initReactI18next } from "react-i18next";
-// import i18next from 'i18next';
+import { useTranslation, initReactI18next } from "react-i18next";
+import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpApi from 'i18next-http-backend';
 import cookies from 'js-cookie'
@@ -80,7 +79,7 @@ const RedirectAuthenticatedUser = ({ children }) => {
 
 function App() {
 	// Translation
-	// const { t } = useTranslation();
+	const { t } = useTranslation();
 	const lng = cookies.get('i18next') || 'en';
 
 	useEffect(() => {
@@ -138,7 +137,7 @@ function App() {
 					path='/profile'
 					element={
 						<ProtectedRoute>
-							<DashboardPage />
+							<Profile />
 						</ProtectedRoute>
 					}
 				/>
@@ -158,13 +157,25 @@ function App() {
 						</RedirectAuthenticatedUser>
 					}
 				/>
-				<Route path='/verify-email' element={<EmailVerificationPage />} />
+				<Route path='/verify-email' element={
+					<RedirectAuthenticatedUser>
+						<EmailVerificationPage />
+					</RedirectAuthenticatedUser>
+					} />
 				<Route
 					path='/forgot-password'
 					element={
 						<RedirectAuthenticatedUser>
 							<ForgotPasswordPage />
 						</RedirectAuthenticatedUser>
+					}
+				/>
+				<Route
+					path='/complete-profile'
+					element={
+						<ProtectedRoute>
+							<CompleteProfile />
+						</ProtectedRoute>
 					}
 				/>
 

@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Card, CardContent } from "../components/ui/card";
-import { Button } from "../components/ui/button";
-import { Input } from "../components/ui/input";
-import Navbar from "../components/Navbar/Navbar";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import Navbar from "@/components/Navbar/Navbar";
 import './styles/Home.css';
-import Footer from "../components/Footer";
+import Footer from "@/components/Footer";
 import { useNavigate } from "react-router-dom";
 
 

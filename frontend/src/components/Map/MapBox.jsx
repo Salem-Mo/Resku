@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import Map, { NavigationControl, Marker, Popup, Source, Layer } from 'react-map-gl';
-import Map, { NavigationControl, Marker, Popup } from 'react-map-gl';
+import Map, { NavigationControl, Marker, Popup, Source, Layer } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import './Map.css';
 import { useAuthStore } from "../../store/authStore";
@@ -15,13 +14,17 @@ import axios from 'axios';
 import { format } from 'timeago.js';
 import { useTranslation } from "react-i18next";
 import Cookies from 'js-cookie';
-import {ServerUrl} from '../../utils/constants';
+import {ServerUrl} from '@/utils/constants';
 import toast from "react-hot-toast";
 
 const SalhlyLogo = '/images/salhly.png';
+
+
+
 const MAPBOX_TOKEN = 'pk.eyJ1Ijoic2FsZW1tb2hhbWVkIiwiYSI6ImNtMHdoaHlwYTAxdnkybHM1Y2djdHVidnAifQ.BFxnRx6AF4vGKAOyUcjbFQ'; // Replace with your token
 
 const MapBox = () => {
+
   const { user } = useAuthStore();
   const { t } = useTranslation();
   const currentUser = user.email;
@@ -203,7 +206,7 @@ const MapBox = () => {
       ]);
       console.log(bounds);
     }
-  }, [viewState, bounds]);
+  }, [viewState]);
   const [minLon, minLat, maxLon, maxLat] = bounds;
   const [servicesType, setServicesType] = useState("hospital");
   const fetchServices = async () => {
@@ -308,7 +311,7 @@ const MapBox = () => {
 
           ))}
 
-          {hoveredServices && (hoveredServices !== selectedServices) && (
+          {hoveredServices && (hoveredServices != selectedServices) && (
             <Popup
               latitude={hoveredServices.lat}
               longitude={hoveredServices.lon}
@@ -335,13 +338,13 @@ const MapBox = () => {
               </div>
               <div className="card" style={{ textAlign: 'center' }}>
                 {selectedServices.tags.amenity && (
-                  <label>{(selectedServices.tags.amenity === 'fire_station') ? 'Fire Station' : selectedServices.tags.amenity.charAt(0).toUpperCase() + selectedServices.tags.amenity.slice(1)}</label>
+                  <label>{(selectedServices.tags.amenity == 'fire_station') ? 'Fire Station' : selectedServices.tags.amenity.charAt(0).toUpperCase() + selectedServices.tags.amenity.slice(1)}</label>
                 )}
                 {selectedServices.tags.name && (
                   <>
                     <label>{t("Name")}</label>
                     <h4 className="place">{selectedServices.tags.name}</h4>
-                    {selectedServices.tags["name:en"] && selectedServices.tags["name:en"] !== selectedServices.tags.name && (
+                    {selectedServices.tags["name:en"] && selectedServices.tags["name:en"] != selectedServices.tags.name && (
                       <h4 className="place">{selectedServices.tags["name:en"]}</h4>
                     )}
                     {selectedServices.tags.phone && (

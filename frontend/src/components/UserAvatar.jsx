@@ -1,12 +1,10 @@
 import Cookies from 'js-cookie';
-// import React, { useState } from "react";
-import React from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import {ServerUrl} from '../utils/constants';
+import React, { useEffect, useState, useRef } from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {ServerUrl} from '@/utils/constants';
 
 
-// const UserAvatar = (currentUser, type) => {
-    const UserAvatar = (currentUser) => {
+const UserAvatar = (currentUser, type) => {
     const Host = `${ServerUrl}/`;
     const colors = [
         "bg-[#712c4a57] text-[#ff006e] border-[1px] border-[#ff006faa]",
@@ -14,13 +12,10 @@ import {ServerUrl} from '../utils/constants';
         "bg-[#06d6a02a] text-[#06d6a0] border-[1px] border-[#06d6a0bb]",
         "bg-[#4cc9f02a] text-[#4cc9f0] border-[1px] border-[#4cc9f0bb]"
     ];
-    // const [user, setUser] = useState(currentUser.currentUser);
+    const [user, setUser] = useState(currentUser.currentUser);
 
-    // const [userImg, setUserImg] = useState(user.userImage || null);
-    // const [selectedColor, setSelectedColor] = useState(user.color);
-    const user = currentUser.currentUser;
-    const userImg = user.userImage || null;
-    const selectedColor = user.color;
+    const [userImg, setUserImg] = useState(user.userImage || null);
+    const [selectedColor, setSelectedColor] = useState(user.color);
     const getColor = (index) => {
         return index !== undefined ? colors[index] : Cookies.get('selectedColor') || colors[0];
     };
@@ -31,10 +26,10 @@ import {ServerUrl} from '../utils/constants';
 
                 <>
                     <AvatarImage
-                        src={Host + userImg} alt={`${user?.name || 'User'}'s avatar`}
+                        src={userImg} alt={`${user?.name || 'User'}'s avatar`}
                         style={{
                             objectFit: 'contain',
-                            backgroundImage: `url(${Host + userImg})`
+                            backgroundImage: `url(${userImg})`
                         }}
                     // Blur the bg image
                     />

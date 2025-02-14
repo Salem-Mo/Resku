@@ -40,6 +40,19 @@ const userSchema = new mongoose.Schema(
 			required: false,
 			default:"EG"
 		},
+		phone: {
+			type: String,
+			required: false,
+		},
+		supplies: {
+			type: Object,
+			required: false,
+		},
+		badges: [String] ,
+		nationalId: {
+			type: String,
+			required: false,
+		},
 		resetPasswordToken: String,
 		resetPasswordExpiresAt: Date,
 		verificationToken: String,
