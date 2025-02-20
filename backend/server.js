@@ -19,7 +19,7 @@ const __dirname = path.resolve();
 
 const PORT = process.env.PORT || 5000;
 const FEHosturl = process.env.FEHosturl;
-const FEHosturlnet = ['http://localhost:5173', 'http://localhost:3000', 'http://192.168.1.2:5173', 'http://192.168.1.2:3000'];
+const FEHosturlnet = ['http://localhost:5173', 'http://localhost:3000','http://192.168.1.169', 'http://192.168.1.2:5173', 'http://192.168.1.2:3000'];
 
 app.use(cors({
     origin: [FEHosturl, FEHosturlnet],
@@ -37,20 +37,7 @@ app.use(
     "/uploads/files/",
     express.static(path.join(__dirname, "uploads/files/"))
 );
-const options = {
-    method: 'GET',
-    url: 'https://maps-data.p.rapidapi.com/whatishere.php',
-    params: {
-      lat: '48.8719556',
-      lng: '2.3415407',
-      lang: 'en',
-      country: 'us'
-    },
-    headers: {
-      'x-rapidapi-key': 'cf0c3488b9msh320f04ad5464478p169f71jsn531012b9212e',
-      'x-rapidapi-host': 'maps-data.p.rapidapi.com'
-    }
-  };
+
 app.use("/api/auth", authRoutes);
 app.use("/api/pins", pinRoutes);
 app.use("/api/chat", chatRouter);
@@ -93,9 +80,9 @@ io.on("connection", (socket) => {
 });
 
 
-httpServer.listen(PORT,  () => {
+httpServer.listen(PORT,BEHostip,  () => {
     connectDB();
-    // console.log(`Server is running on: http://${BEHostip}:${PORT}`);
-    console.log(`Server is running on port: ${PORT}`);
+    console.log(`Server is running on: http://${BEHostip}:${PORT}`);
+    // console.log(`Server is running on port: ${PORT}`);
 
 });
