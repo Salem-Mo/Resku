@@ -87,7 +87,7 @@ const MessageContainer = () => {
             mkv: { type: 'Video', preview: <video src={fileURL} controls className="w-32 h-32" /> },
             mp3: { type: 'Audio', preview: <AudioPlayer user={isSender ? user : selectedChatData} source={fileURL} /> },
             webm: { type: 'Audio', preview: <AudioPlayer user={isSender ? user : selectedChatData} source={fileURL} /> },
-            wav: { type: 'Audio', preview: <AudioPlayer user={isSender ? user : selectedChatData} source={fileURL} /> },
+            wav: { type: 'Audio', preview: <AudioPlayer use r={isSender ? user : selectedChatData} source={fileURL} /> },
             ogg: { type: 'Audio', preview: <AudioPlayer user={isSender ? user : selectedChatData} source={fileURL} /> },
             flac: { type: 'Audio', preview: <AudioPlayer user={isSender ? user : selectedChatData} source={fileURL} /> },
 

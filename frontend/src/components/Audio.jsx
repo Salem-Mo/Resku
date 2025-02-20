@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import UserAvatar from './UserAvatar';
 
 const AudioPlayer = ({ user , source }) => {
-  const audioRef = useRef(new window.Audio(source));  // Use window.Audio to avoid name collision
+  const audioRef = useRef(new window.Audio(source)); 
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -49,14 +49,14 @@ const AudioPlayer = ({ user , source }) => {
 
   return (
     <StyledWrapper>
-      <div className="audio-player">
+      <div className="audio-player ">
         <div className="mr-2">
 
           <UserAvatar currentUser={user} />
         </div>
         <div className="player-controls">
           <div className="song-info">
-            <div className="song-title">Song Title</div>
+            <div className="song-title">Voice</div>
             <p className="artist">{user.name}</p>
           </div>
           <div className="progress-bar" onClick={handleProgressClick}>

@@ -1,0 +1,124 @@
+{
+    "badges": [
+      {
+        "id": 1,
+        "name": "First Responder",
+        "description": "Awarded for being the first to respond to an emergency request.",
+        "icon": "https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-first-responder-quarantine-flaticons-flat-flat-icons.png"
+      },
+      {
+        "id": 2,
+        "name": "Good Samaritan",
+        "description": "Awarded for consistently offering help to those in need.",
+        "icon": "https://img.icons8.com/color/48/good-quality.png"
+      },
+      {
+        "id": 3,
+        "name": "Lifesaver",
+        "description": "Awarded for successfully assisting in saving a life.",
+        "icon": "https://img.icons8.com/color/48/lifebuoy.png"
+      },
+      {
+        "id": 4,
+        "name": "Guardian Angel",
+        "description": "Awarded for providing critical assistance during a life-threatening situation.",
+        "icon": "https://img.icons8.com/color/96/angel-with-sword.png"
+      },
+      {
+        "id": 5,
+        "name": "Heroic Helper",
+        "description": "Awarded for going above and beyond to assist in emergencies.",
+        "icon": "https://img.icons8.com/color/96/super-hero-male.png"
+      },
+      {
+        "id": 6,
+        "name": "Rapid Responder",
+        "description": "Awarded for responding to emergencies within 2 minutes.",
+        "icon": "https://img.icons8.com/color/48/stopwatch.png"
+      },
+      {
+        "id": 7,
+        "name": "Community Champion",
+        "description": "Awarded for being a top helper in your local community.",
+        "icon": "https://img.icons8.com/doodle/96/online-community.png"
+      },
+      {
+        "id": 8,
+        "name": "Safety Sentinel",
+        "description": "Awarded for actively ensuring the safety of others.",
+        "icon": "https://img.icons8.com/color/48/shield.png"
+      },
+      {
+        "id": 9,
+        "name": "Rescue Ranger",
+        "description": "Awarded for assisting in rescue operations.",
+        "icon": "https://img.icons8.com/emoji/96/rescue-workers-helmet.png"
+      },
+      {
+        "id": 10,
+        "name": "Support Specialist",
+        "description": "Awarded for providing exceptional support during emergencies.",
+        "icon": "https://img.icons8.com/color/48/support.png"
+      },
+      {
+        "id": 11,
+        "name": "Emergency Expert",
+        "description": "Awarded for handling 5 or more emergencies with expertise.",
+        "icon": "https://img.icons8.com/bubbles/100/man-with-a-security-shield.png"
+      },
+      {
+        "id": 12,
+        "name": "Helping Hand",
+        "description": "Awarded for assisting in 3 or more emergencies.",
+        "icon": "https://img.icons8.com/color/48/hand.png"
+      },
+      {
+        "id": 13,
+        "name": "Alert Ally",
+        "description": "Awarded for being vigilant and reporting incidents promptly.",
+        "icon": "https://img.icons8.com/color/48/alarm.png"
+      },
+      {
+        "id": 14,
+        "name": "On-Call Hero",
+        "description": "Awarded for being available and responsive during critical times.",
+        "icon": "https://img.icons8.com/color/48/phone.png"
+      },
+      {
+        "id": 15,
+        "name": "Volunteer Virtuoso",
+        "description": "Awarded for exceptional volunteer contributions.",
+        "icon": "https://img.icons8.com/color/48/volunteering.png"
+      },
+      {
+        "id": 16,
+        "name": "Crisis Commander",
+        "description": "Awarded for managing high-pressure situations effectively.",
+        "icon": "https://img.icons8.com/color/48/manager.png"
+      },
+      {
+        "id": 17,
+        "name": "Aid Advocate",
+        "description": "Awarded for promoting and supporting aid initiatives.",
+        "icon": "https://img.icons8.com/color/48/megaphone.png"
+      },
+      {
+        "id": 18,
+        "name": "Rescue Rockstar",
+        "description": "Awarded for outstanding performance in rescue operations.",
+        "icon": "https://img.icons8.com/color/48/rock-music.png"
+      },
+      {
+        "id": 19,
+        "name": "Patron of Protection",
+        "description": "Awarded for being a dedicated protector of the community.",
+        "icon": "https://img.icons8.com/color/48/protection-mask.png"
+      },
+      {
+        "id": 20,
+        "name": "Beacon of Hope",
+        "description": "Awarded for inspiring hope and positivity during emergencies.",
+        "icon": "https://img.icons8.com/color/48/lighthouse.png"
+      }
+    ]
+  }

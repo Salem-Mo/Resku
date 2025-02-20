@@ -37,14 +37,28 @@ app.use(
     "/uploads/files/",
     express.static(path.join(__dirname, "uploads/files/"))
 );
-
+const options = {
+    method: 'GET',
+    url: 'https://maps-data.p.rapidapi.com/whatishere.php',
+    params: {
+      lat: '48.8719556',
+      lng: '2.3415407',
+      lang: 'en',
+      country: 'us'
+    },
+    headers: {
+      'x-rapidapi-key': 'cf0c3488b9msh320f04ad5464478p169f71jsn531012b9212e',
+      'x-rapidapi-host': 'maps-data.p.rapidapi.com'
+    }
+  };
 app.use("/api/auth", authRoutes);
 app.use("/api/pins", pinRoutes);
 app.use("/api/chat", chatRouter);
 app.use("/api/room", roomRouter);
-app.get("/", (req, res) => {
-    res.send("Hello World!");
+app.get("/", async (req, res) => {
+    res.send("Server Running....")
 });
+
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "/frontend/dist")));

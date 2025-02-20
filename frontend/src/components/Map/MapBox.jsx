@@ -4,6 +4,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import './Map.css';
 import { useAuthStore } from "../../store/authStore";
 
+import { GrAttachment } from "react-icons/gr";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ReportOutlinedIcon from '@mui/icons-material/ReportOutlined';
 import ReportProblemOutlinedIcon from '@mui/icons-material/ReportProblemOutlined';

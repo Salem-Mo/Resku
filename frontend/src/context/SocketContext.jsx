@@ -7,11 +7,9 @@ const SocketContext = createContext();
 
 export const SocketProvider = ({ children }) => {
     const [socket, setSocket] = useState(null);
-
     useEffect(() => {
         const newSocket = io(ServerUrl);
         setSocket(newSocket);
-
         return () => newSocket.close();
     }, []);
 

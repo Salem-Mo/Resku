@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {ServerUrl} from '@/utils/constants';
 
 
-const UserAvatar = (currentUser, type) => {
+const UserAvatar = (currentUser, type ) => {
     const Host = `${ServerUrl}/`;
     const colors = [
         "bg-[#712c4a57] text-[#ff006e] border-[1px] border-[#ff006faa]",
@@ -26,16 +26,16 @@ const UserAvatar = (currentUser, type) => {
 
                 <>
                     <AvatarImage
-                        src={userImg} alt={`${user?.name || 'User'}'s avatar`}
+                        src={userImg.startsWith('blob:') ? userImg : Host + userImg} alt={`${user?.name || 'User'}'s avatar`}
                         style={{
                             objectFit: 'contain',
-                            backgroundImage: `url(${userImg})`
+                            backgroundImage: `url(${userImg.startsWith('blob:') ? userImg : Host + userImg})`
                         }}
                     // Blur the bg image
                     />
                     <AvatarImage
                         className={`${getColor(selectedColor)}`}
-                        src={user.userImg}
+                        src={userImg.startsWith('blob:') ? userImg : Host + userImg}
                         alt={`${user?.name || 'User'}'s avatar`}
                     />
                 </>

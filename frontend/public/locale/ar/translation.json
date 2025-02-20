@@ -320,5 +320,64 @@
     "Public Telephone": "هاتف عام",
     "Vehicle Repair": "صيانة المركبات",
     "Pharmacy": "صيدلية",
-    "Slahly":"صلحلي"
+    "Slahly": "صلحلي",
+    "First Responder": "المستجيب الأول",
+    "Awarded for being the first to respond to an emergency request.": "يُمنح لكونه أول من يستجيب لطلب الطوارئ.",
+
+    "Good Samaritan": "السامري الصالح",
+    "Awarded for consistently offering help to those in need.": "يُمنح لمن يقدم المساعدة باستمرار لمن يحتاجها.",
+
+    "Lifesaver": "منقذ الحياة",
+    "Awarded for successfully assisting in saving a life.": "يُمنح لمن نجح في المساعدة في إنقاذ حياة.",
+
+    "Guardian Angel": "الملاك الحارس",
+    "Awarded for providing critical assistance during a life-threatening situation.": "يُمنح لتقديم مساعدة حاسمة خلال موقف يهدد الحياة.",
+
+    "Heroic Helper": "المساعد البطولي",
+    "Awarded for going above and beyond to assist in emergencies.": "يُمنح لمن يبذل جهدًا استثنائيًا للمساعدة في حالات الطوارئ.",
+
+    "Rapid Responder": "المستجيب السريع",
+    "Awarded for responding to emergencies within 2 minutes.": "يُمنح لمن يستجيب لحالات الطوارئ في غضون دقيقتين.",
+
+    "Community Champion": "بطل المجتمع",
+    "Awarded for being a top helper in your local community.": "يُمنح لكونه من أبرز المساعدين في مجتمعه المحلي.",
+
+    "Safety Sentinel": "حارس السلامة",
+    "Awarded for actively ensuring the safety of others.": "يُمنح لمن يساهم بنشاط في ضمان سلامة الآخرين.",
+
+    "Rescue Ranger": "حارس الإنقاذ",
+    "Awarded for assisting in rescue operations.": "يُمنح لمن يشارك في عمليات الإنقاذ.",
+
+    "Support Specialist": "أخصائي الدعم",
+    "Awarded for providing exceptional support during emergencies.": "يُمنح لمن يقدم دعمًا استثنائيًا أثناء الطوارئ.",
+
+    "Emergency Expert": "خبير الطوارئ",
+    "Awarded for handling 5 or more emergencies with expertise.": "يُمنح لمن تعامل مع خمس حالات طوارئ أو أكثر بخبرة.",
+
+    "Helping Hand": "يد العون",
+    "Awarded for assisting in 3 or more emergencies.": "يُمنح لمن قدم المساعدة في ثلاث حالات طوارئ أو أكثر.",
+
+    "Alert Ally": "الحليف اليقظ",
+    "Awarded for being vigilant and reporting incidents promptly.": "يُمنح لليقظة والإبلاغ عن الحوادث بسرعة.",
+
+    "On-Call Hero": "البطل المتأهب",
+    "Awarded for being available and responsive during critical times.": "يُمنح لمن يكون متاحًا ومستجيبًا خلال الأوقات الحرجة.",
+
+    "Volunteer Virtuoso": "المتطوع المتميز",
+    "Awarded for exceptional volunteer contributions.": "يُمنح لمساهماته التطوعية الاستثنائية.",
+
+    "Crisis Commander": "قائد الأزمات",
+    "Awarded for managing high-pressure situations effectively.": "يُمنح لمن يدير المواقف الصعبة بفعالية.",
+
+    "Aid Advocate": "مدافع عن المساعدات",
+    "Awarded for promoting and supporting aid initiatives.": "يُمنح لمن يروج ويدعم مبادرات المساعدة.",
+
+    "Rescue Rockstar": "نجم الإنقاذ",
+    "Awarded for outstanding performance in rescue operations.": "يُمنح لأدائه المتميز في عمليات الإنقاذ.",
+
+    "Patron of Protection": "راعي الحماية",
+    "Awarded for being a dedicated protector of the community.": "يُمنح لكونه حاميًا مخلصًا للمجتمع.",
+
+    "Beacon of Hope": "منارة الأمل",
+    "Awarded for inspiring hope and positivity during emergencies.": "يُمنح لإلهام الأمل والإيجابية أثناء الطوارئ."
 }
