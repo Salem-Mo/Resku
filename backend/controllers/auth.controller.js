@@ -2,7 +2,7 @@ import bcryptjs from "bcryptjs";
 import crypto from "crypto";
 import path from "path";
 import fs from 'fs';
-import { generateTokenAndSetCookie } from "../utils/generateTokenAndSetCookie.js";
+import { generateTokenAndSetCookie ,generateTokenAndSetHeader } from "../utils/generateTokenAndSetCookie.js";
 import {
     sendResetPasswordEmail,
     sendResetSuccessPasswordEmail,
