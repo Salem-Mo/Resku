@@ -34,7 +34,7 @@ authRouter.post("/forgot-password", forgotPassword);
 
 authRouter.post("/reset-password/:token", resetPassword);
 
-authRouter.post("/update-profile", verifyToken, updateProfile);
+authRouter.post("/update-profile", updateProfile);
 authRouter.post(
     "/add-profile-img",
     upload.single("profile-image"),
